@@ -31,8 +31,8 @@ Install
 
 * Composer install
     ```bash
-    composer require baopham/dynamodb
-    ```
+    composer require quankim/laravel-dynamodb-eloquent-syntax 
+   ```
 
 * Install service provider:
 
@@ -41,7 +41,7 @@ Install
     
     'providers' => [
         ...
-        BaoPham\DynamoDb\DynamoDbServiceProvider::class,
+        QuanKim\DynamoDbEloquentSyntax\DynamoDbServiceProvider::class,
         ...
     ];
     ```
