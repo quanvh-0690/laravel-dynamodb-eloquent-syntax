@@ -41,7 +41,7 @@ Install
     
     'providers' => [
         ...
-        QuanKim\DynamoDbEloquentSyntax\DynamoDbServiceProvider::class,
+          QuanKim\DynamoDbEloquentSyntax\DynamoDbServiceProvider::class,
         ...
     ];
     ```

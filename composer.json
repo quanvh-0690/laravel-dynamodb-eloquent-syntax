@@ -1,5 +1,5 @@
 {
-    "name": "quankim/laravel-dynamodb",
+    "name": "quankim/laravel-dynamodb-eloquent-syntax",
     "description": "Custom Eloquent syntax for DynamoDB from https://github.com/baopham/laravel-dynamodb",
     "keywords": ["laravel", "dynamodb", "aws"],
     "type": "library",
