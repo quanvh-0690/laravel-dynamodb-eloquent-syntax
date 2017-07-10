@@ -63,7 +63,7 @@ Install
 
 Usage
 -----
-* Extends your model with `BaoPham\DynamoDb\DynamoDbModel`, then you can use Eloquent methods that are supported. The idea here is that you can switch back to Eloquent without changing your queries.  
+* Extends your model with `QuanKim\DynamoDbEloquentSyntax\DynamoDbModel`, then you can use Eloquent methods that are supported. The idea here is that you can switch back to Eloquent without changing your queries.  
 
 Supported methods:
 
@@ -124,7 +124,7 @@ $model->decrement('total_product', 1);
 $model->paginate([], $limit, $lastEvaluatedKey);
 ```
 
-* Or if you want to sync your DB table with a DynamoDb table, use trait `BaoPham\DynamoDb\ModelTrait`, it will call a `PutItem` after the model is saved.
+* Or if you want to sync your DB table with a DynamoDb table, use trait `QuanKim\DynamoDbEloquentSyntax\ModelTrait`, it will call a `PutItem` after the model is saved.
 
 Indexes
 -----------
