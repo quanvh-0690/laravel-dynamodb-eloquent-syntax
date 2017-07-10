@@ -75,7 +75,6 @@ $model->delete();
 // Using getIterator(). If 'key' is the primary key or a global/local index and the condition is EQ, will use 'Query', otherwise 'Scan'.
 $model->where('key', 'key value')->get();
 
-// See BaoPham\DynamoDb\ComparisonOperator
 $model->where(['key' => 'key value']);
 // Chainable for 'AND'. 'OR' is not supported.
 $model->where('foo', 'bar')
@@ -105,6 +104,24 @@ $model->chunk(10, function ($records) {
 
     }
 });
+
+// Additional
+// Where in
+$model->where('id', 'in', [])
+// Sub query
+$model->where(function($q) {
+    $q->where('id', 1)
+        ->where('name', 'contains', 'a');
+})->orWhere('email', 'contains', 'abc'));
+
+// Delete all
+$model->where('id', 'in', [1,2,3])->deleteAll();
+// Increment/ Decrement a column
+$model->increment('view_count', 1);
+$model->decrement('total_product', 1);
+
+// Paginate
+$model->paginate([], $limit, $lastEvaluatedKey);
 ```
 
 * Or if you want to sync your DB table with a DynamoDb table, use trait `BaoPham\DynamoDb\ModelTrait`, it will call a `PutItem` after the model is saved.
