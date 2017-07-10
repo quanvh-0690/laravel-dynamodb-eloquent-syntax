@@ -31,6 +31,9 @@ class DynamoDbServiceProvider extends ServiceProvider
                 'credentials' => config('aws.credentials'),
                 'region' => config('aws.region'),
                 'version' => config('aws.version'),
+                'http' => [
+                    'verify' => config('aws.http.verify'),
+                ],
             ];
             $client = new DynamoDbClientService($config, new Marshaler($marshalerOptions), new EmptyAttributeFilter());
 
